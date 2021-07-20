@@ -9,16 +9,29 @@ const baseUrl = "https://bikeindex.org:443/api/v3/search?page=1&per_page=50&loca
 const stolenUrl = "https://bikeindex.org:443/api/v3/search/count?location=Berlin&distance=10&stolenness=proximity"
 
 
-export function getStolenBikes (){
-    return async (dispatch) => {
-        const requestApi = await axios.get(baseUrl);
-     
-        dispatch({
+export function getStolenBikes (title){
+    if (title){
+ 
+        return async (dispatch) => {
+          const requestApi = await axios.get(`https://bikeindex.org:443/api/v3/search?page=1&per_page=50&query=${title}&location=Berlin&distance=10&stolenness=proximity`); 
+          
+          dispatch({
             type: "GET_STOLEN_BIKES",
-            payload: requestApi.data
-        })
-    }
-}
+            payload: requestApi.data,
+          });
+        };
+       }else{
+      
+        return async (dispatch) => {
+          const requestApi = await axios.get(baseUrl);
+      
+          dispatch({
+            type: "GET_STOLEN_BIKES",
+            payload: requestApi.data,
+          });
+        };
+      }
+      }
 
 export function getSlotenCount (){
     return async (dispatch) => {

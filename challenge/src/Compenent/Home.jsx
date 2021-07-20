@@ -33,11 +33,13 @@ export default function Home() {
           
         <div className="card" key={e.id}>
             <a href={`/details/${e.id}`}>
-          <img alt="Avatar" src={e.thumb} />
+          {e.thumb?.length > 0 ? <img src={e.thumb} /> : <img src={"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV-5NOMMcpY4wbiYLek64rO8U6bQV8W6b3t7jGkcn70bJDIIX2ZT3mPA7X6ppvCBkLOmo&usqp=CAU"} /> }
+
+           
           <p>{e.title}</p>
           <div className="container">
             
-            <p>{e.description}</p>
+            <p>{e.description ? e.description : "Description not available..."} </p>
           </div>
           </a>
         </div>
