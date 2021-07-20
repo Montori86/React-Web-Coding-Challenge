@@ -1,0 +1,22 @@
+
+nav {
+    background: rgb(59, 65, 63);
+    padding: 15px 20px;
+  }
+  ul {
+    list-style-type: none;
+  }
+ 
+  
+  
+  .box{
+    display: flex;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+  }
+
+      
+  
