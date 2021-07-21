@@ -47,7 +47,7 @@ export function getSlotenCount (){
 export function getDetails (id){
     return async (dispatch) => {
         const requestApi = await axios.get(`https://bikeindex.org:443/api/v3/bikes/${id}`);
-    
+    console.log()
         dispatch({
             type: "GET_DETAILS",
             payload: requestApi.data

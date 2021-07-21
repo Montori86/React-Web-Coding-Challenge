@@ -6,7 +6,6 @@ const initialState = {
     count: {},
     detail: {},
 }
-console.log(initialState.detail)
 
 export default function rootReducer (state = initialState, action) {
     switch(action.type){

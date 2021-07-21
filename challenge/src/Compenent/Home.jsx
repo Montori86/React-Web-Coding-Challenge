@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getStolenBikes, getSlotenCount } from "../Redux/actions.js";
 import ReactPaginate from "react-paginate";
 import "./Home.css";
-import { NavLink } from "react-router-dom";
+
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ export default function Home() {
   const arrayCount = useSelector((state) => state.count);
   const [currentPage, setCurrentPage] = useState(0);
 
-  console.log(arrayBikes)
+  
   useEffect(() => {
     dispatch(getStolenBikes());
     dispatch(getSlotenCount());
