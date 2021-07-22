@@ -5,7 +5,7 @@ export const GET_DETAILS = "GET_DETAILS"
 
 
 
-const baseUrl = "https://bikeindex.org:443/api/v3/search?page=1&per_page=50&location=Berlin&distance=10&stolenness=proximity";
+const baseUrl = "https://bikeindex.org:443/api/v3/search?page=1&per_page=100&location=Berlin&distance=10&stolenness=proximity";
 const stolenUrl = "https://bikeindex.org:443/api/v3/search/count?location=Berlin&distance=10&stolenness=proximity"
 
 
@@ -13,7 +13,7 @@ export function getStolenBikes (title){
     if (title){
  
         return async (dispatch) => {
-          const requestApi = await axios.get(`https://bikeindex.org:443/api/v3/search?page=1&per_page=50&query=${title}&location=Berlin&distance=10&stolenness=proximity`); 
+          const requestApi = await axios.get(`https://bikeindex.org:443/api/v3/search?page=1&per_page=100&query=${title}&location=Berlin&distance=10&stolenness=proximity`); 
           
           dispatch({
             type: "GET_STOLEN_BIKES",
@@ -45,9 +45,10 @@ export function getSlotenCount (){
 }
 
 export function getDetails (id){
+  
     return async (dispatch) => {
         const requestApi = await axios.get(`https://bikeindex.org:443/api/v3/bikes/${id}`);
-    console.log()
+        
         dispatch({
             type: "GET_DETAILS",
             payload: requestApi.data
