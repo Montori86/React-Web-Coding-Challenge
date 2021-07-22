@@ -1,7 +1,7 @@
 
 .cont{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
 }
 
@@ -54,9 +54,14 @@
   box-shadow: 0 20px 20px 10px rgba(0,0,0,0.2);
   transition: 0.3s;
   border-radius: 5px;
-  width: 50%;
-  background-color: rgb(92, 160, 177);
-  margin: 50px auto; 
+  width: 80%;
+  
+  margin: 20px auto; 
+  background: rgba(172, 136, 136, 0.2);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+
+         
  
 }
 
@@ -75,4 +80,5 @@
 }
 img {
   border-radius: 5px 5px;
+  margin-top: 10%;
 }

@@ -13,7 +13,7 @@ export default function NavBar() {
       aux = e.target.value;
     }
     function handleClick() {
-      dispatch(getStolenBikes (aux));
+      dispatch(getStolenBikes(aux));
     }
     return (
     <nav className="box">              
